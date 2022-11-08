@@ -1,0 +1,12 @@
+body {
+background:gray;
+}
+
+img {
+border:2px solid blue;
+width:50%;
+}
+
+ul{
+list-style: none
+}

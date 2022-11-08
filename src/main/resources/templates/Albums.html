@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Albums (displaying it like it's 1996)</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<h1>Albums....</h1>
+<ul th:each="album : ${albums}" th:with="info=${album}">
+    <li th:text="${info.artist}"></li>
+    <li th:text="${info.title}">Title</li>
+    <li th:text="${info.songCount}"></li>
+    <li th:text="${info.length}"></li>
+    <li><img th:src="${info.imageUrl}"></li>
+</ul>
+
+</body>
+</html>
