@@ -8,11 +8,11 @@
 <body>
 <h1>Albums....</h1>
 <ul th:each="album : ${albums}" th:with="info=${album}">
-    <li th:text="${info.artist}"></li>
-    <li th:text="${info.title}">Title</li>
-    <li th:text="${info.songCount}"></li>
-    <li th:text="${info.length}"></li>
-    <li><img th:src="${info.imageUrl}"></li>
+    <li th:text="${album.artist}"></li>
+    <li th:text="${album.title}">Title</li>
+    <li th:text="${album.songCount}"></li>
+    <li th:text="${album.length}"></li>
+    <li><img th:src="${album.imageUrl}"></li>
 </ul>
 
 </body>
