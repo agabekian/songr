@@ -1,6 +1,7 @@
 package com.meanwhile.armenSongr.repos;
 
 import com.meanwhile.armenSongr.models.Album;
+import com.meanwhile.armenSongr.models.Song;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 // make a repo for the data value. THIS IS A SERVICE - Singelton design principle == SPRING BEAN!!

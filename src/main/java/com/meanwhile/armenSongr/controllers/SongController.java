@@ -24,7 +24,7 @@ public class SongController {
     public String getSongs(Model m) {
         List<Song> songs = songRepo.findAll();
         m.addAttribute("songs", songs);
-        return "displayAlbums";
+        return "AllTheSongs";
     }
 
     @PostMapping("/songs")

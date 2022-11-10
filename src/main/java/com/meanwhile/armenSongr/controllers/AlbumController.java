@@ -12,7 +12,7 @@ import org.springframework.web.servlet.view.RedirectView;
 import java.util.List;
 
 @Controller
-public class manageAlbumsController {
+public class AlbumController {
     //TODO: WIRE up the salom Repository with Autowired
     @Autowired
     AlbumRepo albumRepo;
@@ -21,8 +21,9 @@ public class manageAlbumsController {
     public String getAllAlbums(Model m) {
         List<Album> listAlbums = albumRepo.findAll();
         m.addAttribute("albums", listAlbums);
-        return "displayAlbums";
+        return "songR/displayAlbums";
     }
+
 
     @PostMapping("/")
     public RedirectView createAlbum(String artist, String title, int songCount, double length, String imageUrl) {
@@ -32,4 +33,5 @@ public class manageAlbumsController {
         albumRepo.save(newAlbum);
         return new RedirectView("/");
     }
+
 }

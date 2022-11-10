@@ -7,74 +7,77 @@ import java.util.List;
 @Entity
 public class Album {
 
-  // TODO: setup ID
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY) Long id;
-  //IF you need longer than 255 characters, use these 2 annotations
-  // @Lob
-  // @Type(type = "org.hibernate.type.TextType")
-  public String artist;
-  public String title;
-  public int songCount;
-  public double length;
-  public String imageUrl;
-  @OneToMany(mappedBy = "fromAlbum")
-  private List<Song> songsOnAlbum;
-  public Album(String artist, String title, int songCount, double length, String imageUrl) {
-    this.artist = artist;
-    this.title = title;
-    this.songCount = songCount;
-    this.length = length;
-    this.imageUrl = imageUrl;
-  }
+    // TODO: setup ID
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    Long id;
+    //IF you need longer than 255 characters, use these 2 annotations
+    // @Lob
+    // @Type(type = "org.hibernate.type.TextType")
+    public String artist;
+    public String title;
+    public int songCount;
+    public double length;
+    public String imageUrl;
+    @OneToMany(mappedBy = "fromAlbum")
+    private List<Song> songsOnAlbum;
 
-  public void setArtist(String artist) {
-    this.artist = artist;
-  }
+    public Album(String artist, String title, int songCount, double length, String imageUrl) {
+        this.artist = artist;
+        this.title = title;
+        this.songCount = songCount;
+        this.length = length;
+        this.imageUrl = imageUrl;
+    }
 
-  public void setTitle(String title) {
-    this.title = title;
-  }
+    public void setArtist(String artist) {
+        this.artist = artist;
+    }
 
-  public void setSongCount(int songCount) {
-    this.songCount = songCount;
-  }
+    public void setTitle(String title) {
+        this.title = title;
+    }
 
-  public void setLength(double length) {
-    this.length = length;
-  }
+    public void setSongCount(int songCount) {
+        this.songCount = songCount;
+    }
 
-  public void setImageUrl(String imageUrl) {
-    this.imageUrl = imageUrl;
-  }
+    public void setLength(double length) {
+        this.length = length;
+    }
 
-  private Album() {}//only for entity?
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
 
-  public Long getId() {
-    return id;
-  }
+    private Album() {
+    }//only for entity?
 
-  public String getArtist() {
-    return artist;
-  }
+    public Long getId() {
+        return id;
+    }
 
-  public String getTitle() {
-    return title;
-  }
+    public String getArtist() {
+        return artist;
+    }
 
-  public int getSongCount() {
-    return songCount;
-  }
+    public String getTitle() {
+        return title;
+    }
 
-  public double getLength() {
-    return length;
-  }
+    public int getSongCount() {
+        return songCount;
+    }
 
-  public String getImageUrl() {
-    return imageUrl;
-  }
+    public double getLength() {
+        return length;
+    }
 
-  public List<Song> getSongsOnAlbum() {
-    return songsOnAlbum;
-  }
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public List<Song> getSongsOnAlbum() {
+        return songsOnAlbum;
+    }
 }

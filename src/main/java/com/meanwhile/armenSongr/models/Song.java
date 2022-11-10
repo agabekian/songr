@@ -1,4 +1,5 @@
 package com.meanwhile.armenSongr.models;
+
 import javax.persistence.*;
 
 @Entity
@@ -13,11 +14,13 @@ public class Song {
     Album fromAlbum;
 
     public Song(String title, int length, int trackNumber, Album fromAlbum) {
-
         this.title = title;
         this.length = length;
         this.trackNumber = trackNumber;
         this.fromAlbum = fromAlbum;
+    }
+
+    private Song() {
     }
 
     public Long getId() {

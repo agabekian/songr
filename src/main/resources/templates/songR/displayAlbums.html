@@ -7,17 +7,16 @@
 </head>
 <body>
 <ul th:each="album : ${albums}" th:with="info=${album}">
-    <li th:text="'Artist' + ${album.artist}"></li>
+    <li th:text="'Artist: ' + ${album.artist}"></li>
     <li th:text="'Title: ' + ${album.title}"></li>
     <li th:text="' Songs: ' + ${album.songCount}"></li>
-    <li th:text="'Playing time' + ${album.length}"></li>
+    <li th:text="'Playing time: ' + ${album.length/60}"></li>
     <li><img th:src="${album.imageUrl}"></li>
-    <div>Songs</div>
-<!--    <ul th:each="s: ${album}">-->
-<!--        <li th:text="'Title: ' + ${s.title}"></li>-->
-        <!--        <li th:text="'Track Number: ' + ${s.trackNumber}"></li>-->
-        <!--        <li th:text="'Time' + ${s.length}"></li>-->
-<!--    </ul>-->
+    <div>Songs On this Album:</div>
+    <ul th:each="s: ${album.songsOnAlbum}">
+        <li th:text=" '#' + ${s.trackNumber} +'. '+ ${s.title}+ ' length: ' + ${s.length}"></li>
+
+    </ul>
     <div>add a song</div>
     <form action="/songs" method="post">
         <fieldset>
@@ -26,7 +25,7 @@
             <input type="text" name="title"/>
 
             <label>Length</label>
-            <input type="text" name="length">
+            <input type="text" name="length">a
 
             <label>track number</label>
             <input type="text" name="trackNumber">
