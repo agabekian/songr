@@ -1,9 +1,7 @@
 package com.meanwhile.armenSongr.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 // TODO: turn into Entity -> DB model
 @Entity
@@ -11,8 +9,7 @@ public class Album {
 
   // TODO: setup ID
   @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  Long id;
+  @GeneratedValue(strategy = GenerationType.IDENTITY) Long id;
   //IF you need longer than 255 characters, use these 2 annotations
   // @Lob
   // @Type(type = "org.hibernate.type.TextType")
@@ -21,17 +18,14 @@ public class Album {
   public int songCount;
   public double length;
   public String imageUrl;
-
+  @OneToMany(mappedBy = "fromAlbum")
+  private List<Song> songsOnAlbum;
   public Album(String artist, String title, int songCount, double length, String imageUrl) {
     this.artist = artist;
     this.title = title;
     this.songCount = songCount;
     this.length = length;
     this.imageUrl = imageUrl;
-  }
-
-  public void setId(Long id) {
-    this.id = id;
   }
 
   public void setArtist(String artist) {
@@ -54,8 +48,7 @@ public class Album {
     this.imageUrl = imageUrl;
   }
 
-  public Album() {
-  }
+  private Album() {}//only for entity?
 
   public Long getId() {
     return id;
@@ -79,5 +72,9 @@ public class Album {
 
   public String getImageUrl() {
     return imageUrl;
+  }
+
+  public List<Song> getSongsOnAlbum() {
+    return songsOnAlbum;
   }
 }

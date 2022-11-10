@@ -10,5 +10,6 @@ public interface AlbumRepo extends JpaRepository<Album, Long> {
 
   // DARK MAGIC that we made happen with a specific function name
   public Album findByArtist(String artist);
+  public Album findByTitle(String title);
 
 }
