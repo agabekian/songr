@@ -1,6 +1,7 @@
 package com.meanwhile.armenSongr.repos;
 
 import com.meanwhile.armenSongr.models.Album;
+import com.meanwhile.armenSongr.models.Song;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 // make a repo for the data value. THIS IS A SERVICE - Singelton design principle == SPRING BEAN!!
@@ -10,5 +11,6 @@ public interface AlbumRepo extends JpaRepository<Album, Long> {
 
   // DARK MAGIC that we made happen with a specific function name
   public Album findByArtist(String artist);
+  public Album findByTitle(String title);
 
 }

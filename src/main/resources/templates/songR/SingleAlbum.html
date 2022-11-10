@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Albums</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<h1>Songs</h1>
+<ul>
+    <li th:text="'Artist: ' + ${album.artist}"></li>
+    <li th:text="'Title: ' + ${album.title}"></li>
+    <li th:text="' Songs: ' + ${album.songCount}"></li>
+    <li th:text="'Playing time: ' + ${album.length/60}+ ' min'"></li>
+    <li><img th:src="${album.imageUrl}"></li>
+</ul>
+<!--  <ul th:each="s: ${album.songsOnAlbum}">-->
+<!--    <li th:text="'Title: ' + ${s.title}"></li>-->
+<!--    <li th:text="'Track number: ' + ${s.trackNumber}"></li>-->
+<!--    <li th:text="'Time: ' + ${s.length}"></li>-->
+<!--  </ul>-->
+<!--  <div>add a song</div>-->
+<!--  <form action="/songs" method="post">-->
+<!--    <fieldset>-->
+<!--      <legend>Add a Song</legend>-->
+<!--      <label> Title</label>-->
+<!--      <input type="text" name="title"/>-->
+
+<!--      <label>Length</label>-->
+<!--      <input type="text" name="length">a-->
+
+<!--      <label>track number</label>-->
+<!--      <input type="text" name="trackNumber">-->
+
+<!--      <input type="hidden" name="inputAlbumName" th:value="${album.title}">-->
+<!--      <input type="submit" value="Add Song">-->
+<!--    </fieldset>-->
+<!--  </form>-->
+<!--</ul>-->
+
+
+<!--<form action="/" method="post">-->
+<!--  <fieldset>-->
+<!--    <legend>Add an album</legend>-->
+<!--    <label> Title</label>-->
+<!--    <input type="text" name="title"/>-->
+
+<!--    <label>Artist</label>-->
+<!--    <input type="text" name="artist">-->
+
+<!--    <label>SongCount</label>-->
+<!--    <input type="text" name="songCount">-->
+
+<!--    <label>Length</label>-->
+<!--    <input type="text" name="length">-->
+
+<!--    <label>ImageUrl</label>-->
+<!--    <input type="text" name="imageUrl">-->
+
+<!--    <input type="submit" value="Add Album">-->
+<!--  </fieldset>-->
+<!--</form>-->
+
+</body>
+</html>
