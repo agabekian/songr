@@ -10,3 +10,5 @@ applicatio.properties paste the following:
     spring.jpa.generate-ddl=true
 
 5432 is the default port used by postgre, followed by a name for db.
+
+The app stores albums and songs information in postrgresql db.
